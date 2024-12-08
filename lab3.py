@@ -28,3 +28,35 @@ def find_card_numbers_in_file(file_path):
     except Exception as e:
         print(f"Произошла ошибка при чтении файла: {e}")
         return []
+
+if __name__ == "__lab3__":
+    while True:
+        print("\nВыберите способ ввода данных:")
+        print("1. Пользовательский ввод")
+        print("2. Ввод адреса файла")
+        print("3. Выход")
+
+        try:
+            k = int(input())
+        except ValueError:
+            print("Пожалуйста, введите число от 1 до 3! :)")
+            continue
+        if k == 1:
+            card_input = input("Введите номер карты для проверки: ").strip()
+            if validate_card_number(card_input):
+                print("Номер карты корректный!")
+            else:
+                print("Номер карты неккоректный.")
+
+        elif k == 2:
+            file_path = input("Введите путь к файлу для поиска номеров карт: ").strip()
+            card_numbers_from_file = find_card_numbers_in_file(file_path)
+            if card_numbers_from_file:
+                print("Номера карт, найденые в файле: ", card_numbers_from_file)
+            else:
+                print("Номера карт не найдены.")
+
+        elif k == 3:
+            break
+        else:
+            print("Пожалуйста, введите число от 1 до 3!")
