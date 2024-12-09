@@ -29,7 +29,7 @@ def find_card_numbers_in_file(file_path):
         print(f"Произошла ошибка при чтении файла: {e}")
         return []
 
-if __name__ == "__lab3__":
+if __name__ == "__main__":
     while True:
         print("\nВыберите способ ввода данных:")
         print("1. Пользовательский ввод")
